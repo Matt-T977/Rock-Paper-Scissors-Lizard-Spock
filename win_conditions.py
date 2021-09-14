@@ -6,7 +6,8 @@ class WinConditions:
         self.wins_needed = 0
         self.player_list = PlayerList()
 
-    
+
+# Takes both players gestures and compares the two to determine a winner.
     def gesture_comparison(self, player_one, player_two):
         if player_one.choice == player_two.choice:
             return "This is a Draw!"
@@ -36,9 +37,11 @@ class WinConditions:
             if player_two.choice == "lizard" or player_two.choice == "paper":
                 return False
 
+# Takes in the total number of rounds and calculates the number of wins needed for the majority.
     def how_many_wins(self, rounds):
         self.wins_needed = int(rounds / 2) + 1
 
+# Compares the number of wins needed against the player's score to see if they had won.
     def win_condition_check(self):
         for player in self.player_list.players:
             if player.score == self.wins_needed:

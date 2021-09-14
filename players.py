@@ -8,6 +8,7 @@ class Player:
         self.choice = ""
 
 
+# Allows the player to pick a gesture from a list for their turn.
     def pick_gesture(self):
         invalid = True
         while invalid:
@@ -17,7 +18,7 @@ class Player:
                 invalid = False
                 return self.choice
 
-
+# Takes in the player's gesture shoice and makes sure it is a valid gesture.
     def gesture_validation(self):
         if self.choice in self.gestures:
             return True
